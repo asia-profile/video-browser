@@ -32,7 +32,7 @@ ApplicationWindow {
 
                 delegate:ItemDelegate{
                     objectName: "vid" + (index + 1)
-                    text: "Video" + (index + 1)
+                    text: "Video " + (index + 1)
                     font.pixelSize: 10
                 }
             }
