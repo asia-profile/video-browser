@@ -1,18 +1,5 @@
 # Mobile Video Browser Qtcreator
 
-COMP2811 - Coursework 3: The Process
-Date set: 16.11.20
-Date due: 11.12.20 by 5pm
-Weighting: 50%
-
-Project Tools:
-
-Discord
-Google Drive
-Trello
-Coursework Document
-
-
 Code Guidelines
 * comment your code with single-line comments (using //) such that someone 
   familiar with C++ and this coursework description (i.e. the  person doing the 
