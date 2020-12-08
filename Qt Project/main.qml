@@ -30,13 +30,18 @@ ApplicationWindow {
                 //model: 1000
                 model: backend.getNumberItems()
 
+
                 delegate:ItemDelegate{
+                    id:sausage
                     objectName: "vid" + (index + 1)
                     text: "Video " + (index + 1)
                     font.pixelSize: 10
                 }
             }
         }
+
+
+
 }
 
 
