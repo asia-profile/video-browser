@@ -12,8 +12,6 @@
 class backend : public QObject
 {
     Q_OBJECT
-    //Q_PROPERTY(QString userName READ userName WRITE setName NOTIFY userNameChanged)
-    //QML_ELEMENT
 
 public:
     explicit backend(QObject *parent = nullptr);
