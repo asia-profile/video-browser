@@ -26,10 +26,21 @@ string backend::getLink(int index){
 bool backend::isPlayable(int index){
     return !(this->v->get_elem(index)->isFile());
 }
+bool backend::isFolder(int index){
+    return this->v->get_elem(index)->isFile();
+}
+void backend::grid_itemClick(int index){
+    if(this->isFolder(index)){
+        this->v->add_branch(this->v->get_elem(index));
+    }
+    else{
+
+    }
+}
 //Player functionality
-void backend::start_player(int index){
-    this->p->add(this->getLink(index));
-    this->p->play();
+string backend::grid_playerClick(int index){
+    return this->getLink(index);
+
 }
 void backend::play(){
     this->p->play();

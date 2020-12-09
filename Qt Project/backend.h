@@ -20,18 +20,21 @@ public:
     Q_INVOKABLE QString getName(int index);
     Q_INVOKABLE int getNumberItems();
     Q_INVOKABLE bool isPlayable(int index);
+    Q_INVOKABLE bool isFolder(int index);
+    Q_INVOKABLE void grid_itemClick(int index);
     ///Player
+    Q_INVOKABLE string grid_playerClick(int index);
     Q_INVOKABLE int getStatus();
     Q_INVOKABLE QMediaPlayer* getPlayer();
     //Slots
 public slots:
     ///Player
-    void start_player(int index);
     void play();
     void pause();
     void back();
 
 private:
+    //string link="C:\\Users\\SicSo\\Desktop\\University REPOS\\2811 User Interface\\2811GitlabRepo\\Videos";
     string link="/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/Videos";
     player *p = new player();
     vidManagement *v = new vidManagement(this->link);
