@@ -19,7 +19,7 @@ public:
     ///Video library
     Q_INVOKABLE QString getName(int index);
     Q_INVOKABLE int getNumberItems();
-    Q_INVOKABLE bool isFolder(int index);
+    Q_INVOKABLE bool isPlayable(int index);
     ///Player
     Q_INVOKABLE int getStatus();
     Q_INVOKABLE QMediaPlayer* getPlayer();

@@ -69,7 +69,7 @@ ApplicationWindow {
 
                         Image{
                             id:play_Button
-                            visible: true
+                            visible: backend.isPlayable(index)
                             width: 29
                             height: 29
                             anchors.rightMargin: 5
