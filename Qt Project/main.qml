@@ -9,11 +9,13 @@ ApplicationWindow {
     width: 768
     height: 1024
 
-    //Lock screen size
+    /*Lock screen size
     minimumWidth: width
     minimumHeight: height
     maximumWidth: width
     maximumHeight: height
+    */
+
 
     title: qsTr("Ipad Window")
     color:"#ffffff"
@@ -22,7 +24,7 @@ ApplicationWindow {
             id:wrapper
             width:applicationWindow.width
             height:applicationWindow.height
-            color: "#000000"
+            color: "#ffffff"
             anchors.horizontalCenterOffset: 0
             anchors.verticalCenterOffset: 25
             clip: true
@@ -30,20 +32,22 @@ ApplicationWindow {
             anchors.horizontalCenter: parent.horizontalCenter
 
             Flickable {
-            id: flickable
+                id: flickable
+                anchors.fill: parent
             flickableDirection: Flickable.VerticalFlick
-            width:parent
-            height:parent
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.left: parent.left
-            anchors.bottom: parent.bottom
-            anchors.top: parent.top
+            anchors.horizontalCenter: parent.horizontalCenterd
 
             GridView {
                 id:filebrowser
-                anchors.fill: parent
+                anchors.topMargin: 10
+                anchors.right: parent.right
+                anchors.rightMargin: 24
+                anchors.left: parent.left
+                anchors.leftMargin: 24
+                anchors.top: parent.top
+                boundsMovement: Flickable.FollowBoundsBehavior
+                boundsBehavior: Flickable.DragOverBounds
                 anchors.bottom: parent.bottom
-                keyNavigationWraps: true
                 contentHeight: height
                 contentWidth: width
                 cellWidth: width/3
@@ -58,14 +62,14 @@ ApplicationWindow {
                     width: filebrowser.cellWidth
                     height: filebrowser.cellHeight
 
-
                     Rectangle{
-                        id:containerBackground
-                        color: "#eb04ff"
-                        opacity: 1
+                        id:container
+                        color: "#ff867a"
                         anchors.fill: parent
+                        opacity: 1
                         border.width: 1
                         border.color: "#007fee"
+                        anchors.margins: 5
 
                         Image{
                             id:play_Button
@@ -82,6 +86,7 @@ ApplicationWindow {
 
                         Text{
                             text: "Filename:" + backend.getName(index)+ "/(index ref:"+ index + ")"
+                            wrapMode: Text.NoWrap
                             verticalAlignment: Text.AlignVCenter
                             anchors.bottom: parent.bottom
                             anchors.bottomMargin:  20
@@ -109,8 +114,10 @@ ApplicationWindow {
 
 
 
+
+
 /*##^##
 Designer {
-    D{i:4;anchors_height:130;anchors_width:230}D{i:3;anchors_height:850;anchors_width:740}
+    D{i:2;anchors_height:1024;anchors_width:0}
 }
 ##^##*/
