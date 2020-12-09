@@ -62,10 +62,12 @@ ApplicationWindow {
                     width: filebrowser.cellWidth
                     height: filebrowser.cellHeight
 
-                    MouseArea{
-                        anchors.fill: parent
-                        //add function to do something on onClicked:
+                    //MouseArea{
+                        //anchors.fill: parent
+                        //onClicked: call backend.grid function, write to GridView.model(int)
 
+
+                    //check to see
 
                         Rectangle{
                             id:container
@@ -104,19 +106,22 @@ ApplicationWindow {
                                 font.pixelSize: 12
                             }
                         }
-                    }
+                    //}
                 }
                 //Dans Backend Link
                 BackEnd {
                     id: backend
                 }
+                }
             }
+
+        Button {
+            id: button
+            x: 73
+            y: 0
+            text: qsTr("Button")
+            autoExclusive: true
+            //onClicked://Popup(FUNCTION STRING GOES HERE)
         }
     }
 }
-
-
-
-
-
-
