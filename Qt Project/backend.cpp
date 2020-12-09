@@ -23,6 +23,9 @@ int backend::getNumberItems(){
 string backend::getLink(int index){
     return v->get_elem(index)->get_vid()->get_link();
 }
+bool backend::isFolder(int index){
+    return this->v->get_elem(index)->isFile();
+}
 //Player functionality
 void backend::start_player(int index){
     this->p->add(this->getLink(index));
