@@ -39,7 +39,7 @@ ApplicationWindow {
                 anchors.horizontalCenter: parent.horizontalCenterd
 
                 GridView {
-                    id:filebrowser
+                id:filebrowser
                 clip: true
                 anchors.topMargin:0
                 anchors.right: parent.right
@@ -98,7 +98,6 @@ ApplicationWindow {
                                 horizontalAlignment: Text.AlignHCenter
                                 font.pixelSize: 12
                             }
-
                     }
 
                 }
