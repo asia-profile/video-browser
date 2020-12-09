@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.5
+import QtQuick.Dialogs 1.0
 import io.qt.examples.BackEnd 1.0
 
 ApplicationWindow {
@@ -15,7 +16,6 @@ ApplicationWindow {
     maximumWidth: width
     maximumHeight: height
     */
-
 
     title: qsTr("Ipad Window")
     color:"#ffffff"
@@ -33,20 +33,20 @@ ApplicationWindow {
 
             Flickable {
                 id: flickable
+                anchors.topMargin: 100
                 anchors.fill: parent
-            flickableDirection: Flickable.VerticalFlick
-            anchors.horizontalCenter: parent.horizontalCenterd
+                flickableDirection: Flickable.VerticalFlick
+                anchors.horizontalCenter: parent.horizontalCenterd
 
-            GridView {
-                id:filebrowser
-                anchors.topMargin: 10
+                GridView {
+                    id:filebrowser
+                clip: true
+                anchors.topMargin:0
                 anchors.right: parent.right
                 anchors.rightMargin: 24
                 anchors.left: parent.left
                 anchors.leftMargin: 24
                 anchors.top: parent.top
-                boundsMovement: Flickable.FollowBoundsBehavior
-                boundsBehavior: Flickable.DragOverBounds
                 anchors.bottom: parent.bottom
                 contentHeight: height
                 contentWidth: width
@@ -62,51 +62,50 @@ ApplicationWindow {
                     width: filebrowser.cellWidth
                     height: filebrowser.cellHeight
 
-                    Rectangle{
-                        id:container
-                        color: "#ff867a"
-                        anchors.fill: parent
-                        opacity: 1
-                        border.width: 1
-                        border.color: "#007fee"
-                        anchors.margins: 5
-
-                        Image{
-                            id:play_Button
-                            visible: backend.isPlayable(index)
-                            width: 29
-                            height: 29
-                            anchors.rightMargin: 5
-                            anchors.topMargin: 5
-                            anchors.top: parent.top
-                            anchors.right: parent.right
-                            fillMode: Image.PreserveAspectFit
-                            source: "Play-Button-v1.svg"
-                        }
-
-                        Text{
-                            text: "Filename:" + backend.getName(index)+ "/(index ref:"+ index + ")"
-                            wrapMode: Text.NoWrap
-                            verticalAlignment: Text.AlignVCenter
-                            anchors.bottom: parent.bottom
-                            anchors.bottomMargin:  20
-                            anchors.horizontalCenter: parent.horizontalCenter
+                        Rectangle{
+                            id:container
+                            color: "#ff867a"
+                            anchors.fill: parent
                             opacity: 1
-                            font.weight: Font.Bold
-                            font.family: "Verdana"
-                            horizontalAlignment: Text.AlignHCenter
-                            font.pixelSize: 12
-                        }
+                            border.width: 1
+                            border.color: "#007fee"
+                            anchors.margins: 5
+
+                            Image{
+                                id:play_Button
+                                visible: backend.isPlayable(index)
+                                width: 29
+                                height: 29
+                                anchors.rightMargin: 5
+                                anchors.topMargin: 5
+                                anchors.top: parent.top
+                                anchors.right: parent.right
+                                fillMode: Image.PreserveAspectFit
+                                source: "Play-Button-v1.svg"
+                            }
+
+                            Text{
+                                id:container_text
+                                text: "Filename:" + backend.getName(index)+ "/(index ref:"+ index + ")"
+                                wrapMode: Text.NoWrap
+                                verticalAlignment: Text.AlignVCenter
+                                anchors.bottom: parent.bottom
+                                anchors.bottomMargin:  20
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                opacity: 1
+                                font.weight: Font.Bold
+                                font.family: "Verdana"
+                                horizontalAlignment: Text.AlignHCenter
+                                font.pixelSize: 12
+                            }
 
                     }
 
                 }
-
                 //Dans Backend Link
                 BackEnd {
                     id: backend
                 }
-
             }
         }
     }
@@ -116,8 +115,4 @@ ApplicationWindow {
 
 
 
-/*##^##
-Designer {
-    D{i:2;anchors_height:1024;anchors_width:0}
-}
-##^##*/
+
