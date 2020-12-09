@@ -62,6 +62,11 @@ ApplicationWindow {
                     width: filebrowser.cellWidth
                     height: filebrowser.cellHeight
 
+                    MouseArea{
+                        anchors.fill: parent
+                        //add function to do something on onClicked:
+
+
                         Rectangle{
                             id:container
                             color: "#ff867a"
@@ -98,8 +103,8 @@ ApplicationWindow {
                                 horizontalAlignment: Text.AlignHCenter
                                 font.pixelSize: 12
                             }
+                        }
                     }
-
                 }
                 //Dans Backend Link
                 BackEnd {
