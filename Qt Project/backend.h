@@ -31,7 +31,7 @@ public slots:
     void back();
 
 private:
-    string link="/home/seanridgeon/Qt/CW - Git Repo/Videos/Nested";
+    string link="/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/Videos";
     player *p = new player();
     vidManagement *v = new vidManagement(this->link);
     string getLink(int index);

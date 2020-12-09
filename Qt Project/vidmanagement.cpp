@@ -19,7 +19,7 @@ void vidManagement::create_branch(string link, elem* adress, int branch, int ind
     while(it.hasNext()){
         QString f = it.next();
         if (f.contains(".")){
-            if (f.contains(".wmv") || f.contains(".mp4") || f.contains(".MOV" || f.contains(".mov"))){
+            if (f.contains(".wmv") || f.contains(".mp4") || f.contains(".MOV" )){
                 this->items[this->branch]->push_back(new elem(false, f.toStdString(), branch, index, adress, this->items[this->branch]->size()-1));
             }
         }
