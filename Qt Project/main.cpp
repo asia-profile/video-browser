@@ -7,7 +7,7 @@
 int main(int argc, char *argv[])
 {
 
-    qmlRegisterType<backend>("io.qt.examples.BackEnd", 1, 0, "BackEnd");
+    qmlRegisterType<backend>("Custom.BackEnd", 1, 0, "BackEnd");
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 

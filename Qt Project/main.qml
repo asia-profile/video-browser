@@ -2,7 +2,7 @@ import QtQuick 2.12
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.5
 import QtQuick.Dialogs 1.0
-import io.qt.examples.BackEnd 1.0
+import Custom.BackEnd 1.0
 
 ApplicationWindow {
     id: applicationWindow
@@ -38,7 +38,7 @@ ApplicationWindow {
                 flickableDirection: Flickable.VerticalFlick
                 anchors.horizontalCenter: parent.horizontalCenterd
 
-                GridView {
+                GridView { 
                 id:filebrowser
                 clip: true
                 anchors.topMargin:0
@@ -62,12 +62,59 @@ ApplicationWindow {
                     width: filebrowser.cellWidth
                     height: filebrowser.cellHeight
 
-                    //MouseArea{
-                        //anchors.fill: parent
-                        //onClicked: call backend.grid function, write to GridView.model(int)
+                    onClicked: {
+                        console.log(index,text,container_text.text)
+                        backend.grid_itemClick(index)
+                        filebrowser.model = backend.getNumberItems()
+                    }
 
 
-                    //check to see
+                    /*
+                      Our Current Grid
+
+            directory string |
+                             v
+                      |_|_|_|_|_|_|
+                      |_|_|_|_|_|_|
+                      |_|_|_|_|_|_|
+                      |_|_|_|_|_|_|
+                      |_|_|_|_|_|_|
+
+
+                     folder has name
+                     The folder name + directory string =
+                     - The folder directory where want to be
+
+                     Root Directory(Doesnt change)
+                     Current Directory(The folder name + directory string)
+
+                     |------------|
+                     |            |
+                     |            |
+                     |            |
+                     |------------|
+                     |---FOLDER---|
+                     |---TEXT-----|
+                      ------------
+
+                      onClicked:
+                      write to currentdirect
+                      model: backend.getNumberItems()
+
+                      backend.getNumberItems() -> Root Directory(Doesnt change) - Current
+
+
+                      Our NEW Grid
+
+            "CURRENT DIRECTORY" string
+                             |
+                             v
+                      |X|X|X|X|X|X|
+                      |_|_|_|_|_|_|
+                      |_|_|
+
+                    */
+
 
                         Rectangle{
                             id:container
@@ -88,7 +135,7 @@ ApplicationWindow {
                                 anchors.top: parent.top
                                 anchors.right: parent.right
                                 fillMode: Image.PreserveAspectFit
-                                source: "Play-Button-v1.svg"
+                                source: "Play-Button-v1.svg"                                
                             }
 
                             Text{
@@ -109,19 +156,10 @@ ApplicationWindow {
                     //}
                 }
                 //Dans Backend Link
-                BackEnd {
+                    BackEnd {
                     id: backend
-                }
+                    }
                 }
             }
-
-        Button {
-            id: button
-            x: 73
-            y: 0
-            text: qsTr("Button")
-            autoExclusive: true
-            //onClicked://Popup(FUNCTION STRING GOES HERE)
-        }
     }
 }

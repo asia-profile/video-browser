@@ -3,7 +3,11 @@
 backend::backend(QObject *parent):
 
     QObject(parent){
-    }
+
+    Q_PROPERTY(string directory READ directory WRITE setDirectory NOTIFY directoryChanged)
+    Q_PROPERTY(double gridsize READ gridsize WRITE setGridsize NOTIFY gridsizeChanged)
+
+}
 //Getters
 QString backend::getName(int index){
     if(v->get_elem(index)->isFile())
