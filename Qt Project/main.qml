@@ -4,18 +4,18 @@ import QtQuick.Controls 2.5
 import QtQuick.Dialogs 1.0
 import Custom.BackEnd 1.0
 
+
 ApplicationWindow {
     id: applicationWindow
     visible: true
     width: 768
     height: 1024
 
-    /*Lock screen size
     minimumWidth: width
     minimumHeight: height
     maximumWidth: width
     maximumHeight: height
-    */
+
 
     title: qsTr("Ipad Window")
     color:"#ffffff"
@@ -30,6 +30,7 @@ ApplicationWindow {
             clip: true
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
+
 
             Flickable {
                 id: flickable
@@ -65,7 +66,9 @@ ApplicationWindow {
                     onClicked: {
                         console.log(index,text,container_text.text)
                         backend.grid_itemClick(index)
+                        container.color = "#043564"
                         filebrowser.model = backend.getNumberItems()
+                        //Add QtMultimedia Output
                     }
 
 
@@ -125,17 +128,28 @@ ApplicationWindow {
                             border.color: "#007fee"
                             anchors.margins: 5
 
+
                             Image{
                                 id:play_Button
                                 visible: backend.isPlayable(index)
-                                width: 29
-                                height: 29
+                                width: 40
+                                height: 40
                                 anchors.rightMargin: 5
                                 anchors.topMargin: 5
                                 anchors.top: parent.top
                                 anchors.right: parent.right
                                 fillMode: Image.PreserveAspectFit
-                                source: "Play-Button-v1.svg"                                
+                                source: "Play-Button-v1.svg"
+
+                                MouseArea{
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        console.log(backend.getName(index)+ " CLICKED")
+                                        //open video link in video_player
+                                        backend.grid_playerClick(index)
+                                    }
+                                }
+
                             }
 
                             Text{

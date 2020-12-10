@@ -42,10 +42,7 @@ void backend::grid_itemClick(int index){
     }
 }
 //Player functionality
-string backend::grid_playerClick(int index){
-    return this->getLink(index);
 
-}
 void backend::play(){
     this->p->play();
 }
@@ -56,4 +53,11 @@ void backend::back(){
     this->p->pause();
 }
 
+QString backend::getPlayer_link(){
+    return this->player_link;
+}
+void backend::grid_playerClick(int index){
+    this->player_link = QString::fromStdString(this->getLink(index));
+
+}
 

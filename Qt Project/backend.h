@@ -22,10 +22,12 @@ public:
     Q_INVOKABLE bool isPlayable(int index);
     Q_INVOKABLE bool isFolder(int index);
     Q_INVOKABLE void grid_itemClick(int index);
+
     ///Player
-    Q_INVOKABLE string grid_playerClick(int index);
     Q_INVOKABLE int getStatus();
     Q_INVOKABLE QMediaPlayer* getPlayer();
+    Q_INVOKABLE void grid_playerClick(int index);
+    Q_INVOKABLE QString getPlayer_link();
     //Slots
 public slots:
     ///Player
@@ -39,6 +41,7 @@ private:
     player *p = new player();
     vidManagement *v = new vidManagement(this->link);
     string getLink(int index);
+    QString player_link;
 };
 
 #endif // BACKEND_H
