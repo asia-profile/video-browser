@@ -1,7 +1,7 @@
 QT += core gui widgets multimedia multimediawidgets quick
 
-#CONFIG += c++11
 CONFIG += c++11
+
 QML_IMPORT_NAME = io.qt.examples.backend
 QML_IMPORT_MAJOR_VERSION = 1
 

@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QMediaPlayer>
 #include <QObject>
 #include <QQmlComponent>
 #include "backend.h"

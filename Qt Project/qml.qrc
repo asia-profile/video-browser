@@ -2,6 +2,7 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Play-Button-v1.svg</file>
-        <file>video_player.qml</file>
+        <file>ScrollBar.qml</file>
+        <file>VideoPlayer.qml</file>
     </qresource>
 </RCC>
