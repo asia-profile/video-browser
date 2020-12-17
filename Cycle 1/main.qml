@@ -1,9 +1,8 @@
 import QtQuick 2.12
-import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.5
 import QtQuick.Dialogs 1.0
 import Custom.BackEnd 1.0
-import QtMultimedia 5.14
+import QtMultimedia 5.11
 
 ApplicationWindow {
     id: applicationWindow
@@ -73,53 +72,6 @@ ApplicationWindow {
                         //Add QtMultimedia Output
                     }
 
-
-                    /*
-                      Our Current Grid
-
-                    Directory string
-                             |
-                             v
-                      |_|_|_|_|_|_|
-                      |_|_|_|_|_|_|
-                      |_|_|_|_|_|_|
-                      |_|_|_|_|_|_|
-                      |_|_|_|_|_|_|
-
-
-                     folder has name
-                     The folder name + directory string =
-                     - The folder directory where want to be
-
-                     Root Directory(Doesnt change)
-                     Current Directory(The folder name + directory string)
-
-                     |------------|
-                     |            |
-                     |            |
-                     |            |
-                     |------------|
-                     |---FOLDER---|
-                     |---TEXT-----|
-                      ------------
-
-                      onClicked:
-                      write to currentdirect
-                      model: backend.getNumberItems()
-
-                      backend.getNumberItems() -> Root Directory(Doesnt change) - Current
-
-
-                      Our NEW Grid
-
-            "CURRENT DIRECTORY" string
-                             |
-                             v
-                      |X|X|X|X|X|X|
-                      |_|_|_|_|_|_|
-                      |_|_|
-
-                    */
                     Rectangle {
                         id: container
                         color: "#FFFAFA"
@@ -179,6 +131,7 @@ ApplicationWindow {
         Rectangle {
             id: rectangle
             width: 768
+            height: 600
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 0
@@ -187,18 +140,32 @@ ApplicationWindow {
             color: "#b9b9b9"
             border.color: "#313131"
 
-            Video {
+            MediaPlayer {
+                id: play
+                source: "file:///home/seanridgeon/Videos/Pi%20book%20screen/custom-splash.mp4"
+                autoPlay: true
+                autoLoad: true
+            }
+
+            VideoOutput {
                 id: video_player
-                x: 0
-                y: 0
+                clip: true
+
+                /*y: 0
                 width: 600
                 height: 322
-                autoPlay: true
-                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.rightMargin: 102
                 anchors.top: parent.top
+                anchors.left: parent.left
+                anchors.leftMargin: 84
                 anchors.topMargin: 0
-                clip: true
-                source: backend.getPlayer_link()
+               // volume: 0.1
+                source: player//"../Videos/a.mov"
+               // muted: true
+               // autoPlay: true
+               */
+                source: play
+                anchors.fill: parent
             }
         }
     }
@@ -206,7 +173,7 @@ ApplicationWindow {
 
 /*##^##
 Designer {
-    D{i:11;anchors_y:656}D{i:10;anchors_height:348;anchors_y:100}
+    D{i:11;anchors_x:0}
 }
 ##^##*/
 

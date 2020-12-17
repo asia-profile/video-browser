@@ -1,4 +1,4 @@
-QT += core gui widgets multimedia multimediawidgets quick
+QT += core gui widgets multimedia multimediawidgets quick qml
 
 CONFIG += c++11
 
