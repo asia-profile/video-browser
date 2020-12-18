@@ -1,6 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>ScrollBar.qml</file>
+        <file>videoplayer.qml</file>
+        <file>navbar.qml</file>
+        <file>filebrowser.qml</file>
     </qresource>
 </RCC>

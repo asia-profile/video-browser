@@ -97,7 +97,7 @@ ApplicationWindow {
                                     rectangle.visible = true
                                     rectangle.width = applicationWindow.width
                                     rectangle.height = applicationWindow.height
-                                    rectangle.anchors.fill = applicationWindow
+                                    rectangle.anchors.fill = wrapper
                                 }
                             }
                         }
