@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Navbar.qml</file>
+        <file>File_Browser.qml</file>
+        <file>Videoplayer.qml</file>
+        <file>File_Container.qml</file>
+    </qresource>
+</RCC>

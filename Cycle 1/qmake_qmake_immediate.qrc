@@ -2,11 +2,16 @@
 <qresource prefix="/">
 <file alias="../QML_Assets/Back-Button-b1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/Back-Button-b1.svg</file>
 <file alias="../QML_Assets/Back-Button-w1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/Back-Button-w1.svg</file>
+<file alias="../QML_Assets/cancel-Button-b1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/cancel-Button-b1.svg</file>
 <file alias="../QML_Assets/Home-Button-b1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/Home-Button-b1.svg</file>
+<file alias="../QML_Assets/Info-Button-b1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/Info-Button-b1.svg</file>
+<file alias="../QML_Assets/Info-Button-w1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/Info-Button-w1.svg</file>
 <file alias="../QML_Assets/Pause-Button-v1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/Pause-Button-v1.svg</file>
 <file alias="../QML_Assets/Pause-Button-w1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/Pause-Button-w1.svg</file>
 <file alias="../QML_Assets/Play-Button-v1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/Play-Button-v1.svg</file>
 <file alias="../QML_Assets/Play-Button-w1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/Play-Button-w1.svg</file>
+<file alias="../QML_Assets/speed-Button-b1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/speed-Button-b1.svg</file>
+<file alias="../QML_Assets/speed-Button-w1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/speed-Button-w1.svg</file>
 <file alias="../QML_Assets/volume-mute-w1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/volume-mute-w1.svg</file>
 <file alias="../QML_Assets/volume-unmute-w1.svg">/home/seanridgeon/UoL/Year 2/COMP2811 - User Interfaces/CW3/CW3 - Git Repo/QML_Assets/volume-unmute-w1.svg</file>
 </qresource>
