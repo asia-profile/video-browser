@@ -1,8 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Play-Button-v1.svg</file>
         <file>ScrollBar.qml</file>
-        <file>VideoPlayer.qml</file>
     </qresource>
 </RCC>

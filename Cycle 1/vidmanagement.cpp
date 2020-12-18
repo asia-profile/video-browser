@@ -12,25 +12,29 @@ vidManagement::vidManagement(string link){
     this->main_link=link;
     this->create_branch(link,NULL,-1,-1);
 }
-void vidManagement::create_branch(string link, elem* adress, int branch, int index){
+void vidManagement::create_branch(string link,
+         elem* adress, int branch, int index){
     QDir dir(QString::fromStdString(link));
     QDirIterator it(dir);
     this->items.push_back(new vector<elem*>());
     while(it.hasNext()){
         QString f = it.next();
         if (f.contains(".")){
-            if (f.contains(".wmv") || f.contains(".mp4") || f.contains(".MOV" )){
-                this->items[this->branch]->push_back(new elem(false, f.toStdString(), branch, index, adress, this->items[this->branch]->size()-1));
+            if (f.contains(".wmv")|| f.contains(".mp4")|| f.contains(".MOV" )){
+                this->items[this->branch]->push_back(new elem(false,f.toStdString(), branch,
+                                        index, adress, this->items[this->branch]->size()-1));
             }
         }
         else{
-            this->items[this->branch]->push_back(new elem(true, f.toStdString(), branch, index, adress, this->items[this->branch]->size()-1));
+            this->items[this->branch]->push_back(new elem(true,f.toStdString(), branch,
+                                    index, adress, this->items[this->branch]->size()-1));
         }
     }
     this->branch++;
 }
 void vidManagement::add_branch(elem* adress){
-    this->create_branch(adress->get_link(), adress, this->branch-1, adress->get_index());
+    this->create_branch(adress->get_link(),
+    adress, this->branch-1, adress->get_index());
     adress->set_adress_next(this->items.at(this->branch-1));
     adress->set_branch_next(this->branch);
 }

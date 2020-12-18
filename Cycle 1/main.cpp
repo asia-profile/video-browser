@@ -3,12 +3,11 @@
 #include <QMediaPlayer>
 #include <QObject>
 #include <QQmlComponent>
+#include <QQmlContext>
 #include "backend.h"
 
 int main(int argc, char *argv[])
 {
-
-    qmlRegisterType<backend>("Custom.BackEnd", 1, 0, "BackEnd");
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
@@ -22,6 +21,11 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
+    backend* b = new backend();
+    b->setRoot(engine.rootObjects().at(0));
+    b->setPlayer(engine.rootObjects().at(0));
+    QQmlContext* context = engine.rootContext();
+    context->setContextProperty("backend",b);
 
     return app.exec();
 }

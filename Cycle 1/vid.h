@@ -10,8 +10,6 @@ private:
     int id;
     string name;
     string link;
-    ///Functions
-    int create_id();
 public:
     ///Functions
     //Constructors

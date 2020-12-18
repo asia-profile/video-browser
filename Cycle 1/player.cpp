@@ -1,5 +1,6 @@
 #include "player.h"
 #include <QUrl>
+//Constructors
 player::player(){
     this->url=NULL;
     this->state = 0;
@@ -8,6 +9,10 @@ player::player(){
 player::player(string url){
     this->add(url);
     this->state = 0;
+}
+
+void player::setPlayer(QMediaPlayer* q){
+    this->q = q;
 }
 int player::get_state(){
     return this->state;

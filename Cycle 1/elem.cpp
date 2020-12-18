@@ -2,13 +2,14 @@
 #include <QFileInfo>
 ///Private
 void elem::create_vid(){
-    QFileInfo* info = new QFileInfo(QString::fromStdString(this->link));
+    QFileInfo* info = new QFileInfo
+    (QString::fromStdString(this->link));
     this->v= new vid(info);
     delete(info);
 }
 ///Public
 //Constructors
-elem::elem(bool file, string link, int branch, int index_prev, elem* adress, int index){
+elem::elem(bool file, string link, int branch,int index_prev, elem* adress,int index){
     this->file=file;
     this->link=link;
     this->index = index;

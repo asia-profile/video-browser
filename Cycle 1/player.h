@@ -7,17 +7,20 @@ using namespace std;
 class player
 {
 private:
-    QMediaPlayer* q= new QMediaPlayer();
+    QMediaPlayer* q;
     int state;
     QUrl *url;
 public:
     player();
     player(string url);
+    void setPlayer(QMediaPlayer* q);
     int get_state();
     QMediaPlayer* get_player();
     void add(string url);
     void play();
     void pause();
+
+
 };
 
 #endif // PLAYER_H
